@@ -97,7 +97,6 @@
     <a href="#sobremi">Sobre mí</a>
     <a href="#descargas">Descargas</a>
     <a href="#contacto">Contacto</a>
-    <a href="#admin">Admin</a>
   </nav>
 
   <section id="inicio">
@@ -122,47 +121,6 @@
     <h2>Contacto</h2>
     <p>¿Tienes alguna duda o sugerencia? Escríbeme a: <strong>contacto ig:@06__dichi_j</strong></p>
   </section>
-
-  <section id="admin">
-    <h2>Panel de Administración</h2>
-    <div class="admin-panel">
-      <label for="admin-pass">Contraseña:</label>
-      <input type="password" id="admin-pass" placeholder="Ingresa la contraseña">
-      <button onclick="checkPassword()">Entrar</button>
-
-      <div id="admin-tools" style="display:none;">
-        <h3>Agregar nuevo archivo</h3>
-        <label for="file-name">Nombre visible:</label>
-        <input type="text" id="file-name" placeholder="Ej: Herramienta nueva">
-        <label for="file-url">Ruta del archivo:</label>
-        <input type="text" id="file-url" placeholder="/descargas/archivo.zip">
-        <button onclick="addFile()">Agregar archivo</button>
-        <div id="result-msg"></div>
-      </div>
-    </div>
-  </section>
-
-  <script>
-    function checkPassword() {
-      const pass = document.getElementById('admin-pass').value;
-      if (pass === 'sumireosweb25') {
-        document.getElementById('admin-tools').style.display = 'block';
-      } else {
-        alert('Contraseña incorrecta');
-      }
-    }
-
-    function addFile() {
-      const name = document.getElementById('file-name').value;
-      const url = document.getElementById('file-url').value;
-      const downloadsSection = document.getElementById('descargas');
-      const newLink = document.createElement('a');
-      newLink.href = url;
-      newLink.download = '';
-      newLink.className = 'file-button';
-      newLink.innerText = name;
-      downloadsSection.appendChild(newLink);
-      document.getElementById('result-msg').innerText = 'Archivo agregado correctamente.';
     }
   </script>
 </body>
