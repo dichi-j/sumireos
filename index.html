@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>菫,すみれSumire OS</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #000000;
+      color: white;
+    }
+    header {
+      background-color: #0a0a0a;
+      border-bottom: 3px solid #a64ca6;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      color: #a64ca6;
+      margin: 0;
+      font-size: 2em;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px;
+      background-color: #111;
+      border-bottom: 2px solid #a64ca6;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      border: 1px solid #a64ca6;
+      padding: 8px 16px;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      background-color: #a64ca6;
+    }
+    section {
+      padding: 20px;
+      border-bottom: 2px solid #222;
+    }
+    section h2 {
+      color: #a64ca6;
+    }
+    .file-button {
+      display: inline-block;
+      margin: 10px 5px;
+      padding: 10px 20px;
+      background-color: #111;
+      border: 2px solid #a64ca6;
+      border-radius: 5px;
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .file-button:hover {
+      background-color: #a64ca6;
+    }
+    .admin-panel {
+      background-color: #111;
+      border: 2px solid #a64ca6;
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+    .admin-panel input, .admin-panel textarea, .admin-panel button {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      background-color: #000;
+      color: white;
+      border: 1px solid #a64ca6;
+      border-radius: 5px;
+    }
+    .admin-panel button {
+      background-color: #a64ca6;
+      cursor: pointer;
+    }
+    .admin-panel button:hover {
+      background-color: #c06cc0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>菫,すみれSumire OS</h1>
+  </header>
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#sobremi">Sobre mí</a>
+    <a href="#descargas">Descargas</a>
+    <a href="#contacto">Contacto</a>
+    <a href="#admin">Admin</a>
+  </nav>
+
+  <section id="inicio">
+    <h2>Bienvenido a Sumire OS</h2>
+    <p>Este es tu centro de herramientas, utilidades y sistemas operativos personalizados. ¡Disfrútalo!</p>
+  </section>
+
+  <section id="sobremi">
+    <h2>Sobre mí</h2>
+    <p>Hola, soy Dichi_J, desarrollador de herramientas de optimización y sistemas operativos personalizados. Este blog es mi espacio para compartir mis proyectos contigo.</p>
+  </section>
+
+  <section id="descargas">
+    <h2>Descargas</h2>
+    <p>Haz clic en un archivo para descargarlo automáticamente:</p>
+    <a href="/descargas/herramienta1.zip" download class="file-button">Optimización Avanzada</a>
+    <a href="/descargas/sumire-os-v4.2.iso" download class="file-button">Sumire OS v4.2</a>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p>¿Tienes alguna duda o sugerencia? Escríbeme a: <strong>contacto@sumireos.com</strong></p>
+  </section>
+
+  <section id="admin">
+    <h2>Panel de Administración</h2>
+    <div class="admin-panel">
+      <label for="admin-pass">Contraseña:</label>
+      <input type="password" id="admin-pass" placeholder="Ingresa la contraseña">
+      <button onclick="checkPassword()">Entrar</button>
+
+      <div id="admin-tools" style="display:none;">
+        <h3>Agregar nuevo archivo</h3>
+        <label for="file-name">Nombre visible:</label>
+        <input type="text" id="file-name" placeholder="Ej: Herramienta nueva">
+        <label for="file-url">Ruta del archivo:</label>
+        <input type="text" id="file-url" placeholder="/descargas/archivo.zip">
+        <button onclick="addFile()">Agregar archivo</button>
+        <div id="result-msg"></div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function checkPassword() {
+      const pass = document.getElementById('admin-pass').value;
+      if (pass === 'sumireosweb25') {
+        document.getElementById('admin-tools').style.display = 'block';
+      } else {
+        alert('Contraseña incorrecta');
+      }
+    }
+
+    function addFile() {
+      const name = document.getElementById('file-name').value;
+      const url = document.getElementById('file-url').value;
+      const downloadsSection = document.getElementById('descargas');
+      const newLink = document.createElement('a');
+      newLink.href = url;
+      newLink.download = '';
+      newLink.className = 'file-button';
+      newLink.innerText = name;
+      downloadsSection.appendChild(newLink);
+      document.getElementById('result-msg').innerText = 'Archivo agregado correctamente.';
+    }
+  </script>
+</body>
+</html>
