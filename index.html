@@ -214,6 +214,27 @@
 
   <div class="chat-container" id="chatContainer">
     <div class="avatar"></div>
+    <div class="bot-name">Sumire Bot</div>
+    .bot-name {
+  text-align: center;
+  margin-top: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #c084fc;
+  text-shadow: 0 0 5px #c084fc, 0 0 10px #c084fc, 0 0 15px #6f42c1;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+/* Animación de resplandor */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #c084fc, 0 0 10px #c084fc, 0 0 15px #6f42c1;
+  }
+  to {
+    text-shadow: 0 0 10px #d1a6ff, 0 0 20px #c084fc, 0 0 30px #6f42c1;
+  }
+}
+
     <div class="chat-box" id="chatBox"></div>
     <div class="input-area">
       <input type="text" id="userInput" placeholder="Escribe algo...">
