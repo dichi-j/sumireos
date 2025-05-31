@@ -77,6 +77,20 @@
       background-color: #a64ca6;
     }
 
+    /* VIDEO */
+    .youtube-container {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    .youtube-container iframe {
+      border: 3px solid #a64ca6;
+      border-radius: 15px;
+      box-shadow: 0 0 15px #a64ca6;
+      max-width: 100%;
+    }
+
     /* CHATBOT */
     .chat-toggle {
       position: fixed;
@@ -108,30 +122,31 @@
       z-index: 1000;
       border: 2px solid #6f42c1;
     }
-.avatar {
-  position: relative;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  margin: 0 auto;
-  border: 2px solid #6f42c1;
-  background-image: url('https://us.rule34.xxx//images/4581/cba668cc296ce56ddf29b3a4e9912c97.jpeg?5263831');
-  background-size: cover;
-  background-position: center;
-}
 
-.status-indicator {
-  position: absolute;
-  top: -4px;
-  right: -4px;
-  width: 16px;
-  height: 16px;
-  background-color: #2ecc71; /* Verde estilo online */
-  border: 3px solid #1c1c1c; /* Borde del fondo del chat */
-  border-radius: 50%;
-  box-shadow: 0 0 5px #00ff00;
-}
-    
+    .avatar {
+      position: relative;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin: 0 auto;
+      border: 2px solid #6f42c1;
+      background-image: url('https://us.rule34.xxx//images/4581/cba668cc296ce56ddf29b3a4e9912c97.jpeg?5263831');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .status-indicator {
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      width: 16px;
+      height: 16px;
+      background-color: #2ecc71;
+      border: 3px solid #1c1c1c;
+      border-radius: 50%;
+      box-shadow: 0 0 5px #00ff00;
+    }
+
     .bot-name {
       text-align: center;
       margin-top: 10px;
@@ -152,20 +167,20 @@
       }
     }
 
-.chat-box {
-  background: #2a2a2a;
-  flex-grow: 1;
-  overflow-y: auto;
-  max-height: 250px; /* <-- LIMITE para evitar que crezca sin control */
-  margin: 15px 0;
-  padding: 10px;
-  border-radius: 15px;
-  font-size: 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  scrollbar-width: thin;
-  scrollbar-color: #6f42c1 transparent;
+    .chat-box {
+      background: #2a2a2a;
+      flex-grow: 1;
+      overflow-y: auto;
+      max-height: 250px;
+      margin: 15px 0;
+      padding: 10px;
+      border-radius: 15px;
+      font-size: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      scrollbar-width: thin;
+      scrollbar-color: #6f42c1 transparent;
     }
 
     .chat-box::-webkit-scrollbar {
@@ -229,7 +244,6 @@
     button.send-btn:hover {
       background-color: #8b5cf6;
     }
-
   </style>
 </head>
 <body>
@@ -273,16 +287,31 @@
     <p>Somos un grupo de chamos que no tenemos nada que hacer y un Rafa que necesita debutar.</p>
   </section>
 
+  <section id="video">
+    <h2 style="color: #a64ca6;">Presentación en Video</h2>
+    <div class="youtube-container">
+      <iframe 
+        src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1&loop=1&playlist=dQw4w9WgXcQ"
+        title="Video autoplay loop"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+        width="560"
+        height="315">
+      </iframe>
+    </div>
+  </section>
+
   <div style="text-align: center;">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf8c7P0sEkf7pi5v9owNKKeEUL3cL2EehJHA&s" alt="Imagen centrada">
-</div>
-  
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf8c7P0sEkf7pi5v9owNKKeEUL3cL2EehJHA&s" alt="Imagen centrada">
+  </div>
+
   <!-- CHATBOT -->
   <button class="chat-toggle" onclick="toggleChat()">💬</button>
 
   <div class="chat-container" id="chatContainer">
-    <div class="avatar"></div>
-    <div class="status-indicator"></div>
+    <div class="avatar">
+      <div class="status-indicator"></div>
+    </div>
     <div class="bot-name">Sumire Bot</div>
     <div class="chat-box" id="chatBox"></div>
     <div class="input-area">
@@ -315,7 +344,6 @@
       appendMessage(message, 'user');
       userInput.value = "";
 
-      // Simulación de respuesta del bot
       setTimeout(() => {
         appendMessage("Echo: " + message, 'bot');
       }, 800);
