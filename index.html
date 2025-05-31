@@ -6,31 +6,29 @@
   <title>Sumire</title>
   <style>
     body {
-    background-image: url('https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-1474-61f7-b2dc-eca062c1746a/raw?se=2025-05-31T02%3A58%3A31Z&sp=r&sv=2024-08-04&sr=b&scid=eaeb2d44-91cd-5b9b-b9b3-e76ee2435adf&skoid=24a7dec3-38fc-4904-b888-8abe0855c442&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-05-30T23%3A38%3A45Z&ske=2025-05-31T23%3A38%3A45Z&sks=b&skv=2024-08-04&sig=u8guehMX0cJ645HXXTUcKwwsRCNSv2xwfL5B1xKB7jo%3D');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed; /* opcional: hace que el fondo no se mueva al hacer scroll */
-    color: white; /* asegura que el texto sea visible si el fondos oscuro */
-    margin: 0; /* evita márgenes  eque a veces agregan espacio alrededor */
-    }
-    body {
+      background-image: url('https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-1474-61f7-b2dc-eca062c1746a/raw?se=2025-05-31T02%3A58%3A31Z&sp=r&sv=2024-08-04&sr=b&scid=eaeb2d44-91cd-5b9b-b9b3-e76ee2435adf&skoid=24a7dec3-38fc-4904-b888-8abe0855c442&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-05-30T23%3A38%3A45Z&ske=2025-05-31T23%3A38%3A45Z&sks=b&skv=2024-08-04&sig=u8guehMX0cJ645HXXTUcKwwsRCNSv2xwfL5B1xKB7jo%3D');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-attachment: fixed;
+      color: white;
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #000000;
-      color: white;
     }
+
     header {
       background-color: #111;
       border-bottom: 3px solid #a64ca6;
       padding: 20px;
       text-align: center;
     }
+
     header h1 {
       color: #a64ca6;
       margin: 0;
       font-size: 2em;
     }
+
     nav {
       display: flex;
       justify-content: center;
@@ -39,6 +37,7 @@
       background-color: #111;
       border-bottom: 2px solid #a64ca6;
     }
+
     nav a {
       color: white;
       text-decoration: none;
@@ -47,16 +46,21 @@
       border-radius: 5px;
       transition: 0.3s;
     }
+
     nav a:hover {
       background-color: #a64ca6;
     }
+
     section {
       padding: 20px;
       border-bottom: 2px solid #222;
     }
+
     section h2 {
       color: #a64ca6;
+      margin-left: 10px;
     }
+
     .file-button {
       display: inline-block;
       margin: 10px 5px;
@@ -68,66 +72,12 @@
       text-decoration: none;
       transition: 0.3s;
     }
+
     .file-button:hover {
       background-color: #a64ca6;
     }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Sumire</h1>
-  </header>
-  <nav>
-    <a href="#inicio">Inicio</a>
-    <a href="#sobremi">Sobre mí</a>
-    <a href="#descargas">Descargas</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
 
-  <section id="inicio">
-    <h2>Bienvenido a Sumire web</h2>
-    <p>esta pagina es para descargar los proyectos que vine haciendo hace un tiempo ,como optimizaciones ,soluciones de errores y quizas uno que otro juegos </p>
-  </section>
-
-  </section>
-     <h2 style="color: #a64ca6;">la siguiente informacion es clasificada</h2>
-     <p>rafa empezo con la homosexualidad p1 
-        cuando rafa era niño se sento  en una banana y eso cambio su vida fin dp1</p>
-  </section>
-  
-  <section id="descargas">
-    <h2>Descargas</h2>
-    <p>Haz clic en un archivo para descargarlo automáticamente:</p>
-    <a href="carpeta_nueva/redeyes.mp4" download class="file-button">fondo de pantalla </a>
-    <a href="carpeta_nueva/presidenta.jpg" download class="file-button">fondo de mona chichona</a>
-    <a href="https://www.mediafire.com/file/p3ws69408wxjm6o/Super+Mario+4+Jugadores(BY+Sumire_web.).7z/file" dowload class="file-button">super mario coop</a>
-  </section>
-
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <p>¿Tienes alguna duda o sugerencia? Escríbeme a: <strong>mis redes</strong></p>
-    <a href="https://www.instagram.com/06__dichi_j/" class="file-button">Instagram</a>
-  </section>
-  
-   <section id="sobremi">
-    <h2>Sobre mí</h2>
-    <p>somos un grupo de chamos que no tenemos nada que hacer y un rafa que necesita debuta</p>
-  </section>
-
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf8c7P0sEkf7pi5v9owNKKeEUL3cL2EehJHA&s">
-
- <!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Chatbot con Avatar</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      color: #fff;
-      margin: 0;
-      padding: 0;
-    }
+    /* CHATBOT */
     .chat-toggle {
       position: fixed;
       bottom: 20px;
@@ -141,7 +91,9 @@
       font-size: 28px;
       cursor: pointer;
       box-shadow: 0 0 10px rgba(0,0,0,0.4);
+      z-index: 1001;
     }
+
     .chat-container {
       position: fixed;
       bottom: 90px;
@@ -156,6 +108,7 @@
       z-index: 1000;
       border: 2px solid #6f42c1;
     }
+
     .avatar {
       width: 60px;
       height: 60px;
@@ -166,6 +119,7 @@
       background-size: cover;
       background-position: center;
     }
+
     .bot-name {
       text-align: center;
       margin-top: 10px;
@@ -221,14 +175,14 @@
 
     .user {
       align-self: flex-end;
-      background-color: #3b82f6; /* azul */
+      background-color: #3b82f6;
       color: #fff;
       border-bottom-right-radius: 0;
     }
 
     .bot {
       align-self: flex-start;
-      background-color: #7c3aed; /* morado */
+      background-color: #7c3aed;
       color: #fff;
       border-bottom-left-radius: 0;
     }
@@ -247,12 +201,6 @@
       background: #333;
       color: #fff;
       font-size: 14px;
-      box-sizing: border-box;
-      transition: background-color 0.3s ease;
-    }
-
-    input:focus {
-      background-color: #444;
     }
 
     button.send-btn {
@@ -263,8 +211,6 @@
       border-radius: 20px;
       cursor: pointer;
       font-weight: bold;
-      transition: background-color 0.3s ease;
-      user-select: none;
     }
 
     button.send-btn:hover {
@@ -273,7 +219,49 @@
   </style>
 </head>
 <body>
+  <header>
+    <h1>Sumire</h1>
+  </header>
 
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#sobremi">Sobre mí</a>
+    <a href="#descargas">Descargas</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <section id="inicio">
+    <h2>Bienvenido a Sumire web</h2>
+    <p>Esta página es para descargar mis proyectos: optimizaciones, soluciones de errores y uno que otro juego.</p>
+  </section>
+
+  <section>
+    <h2>La siguiente información es clasificada</h2>
+    <p>Rafa empezó con la homosexualidad parte 1. Cuando era niño se sentó en una banana y eso cambió su vida. Fin del documento parte 1.</p>
+  </section>
+
+  <section id="descargas">
+    <h2>Descargas</h2>
+    <p>Haz clic en un archivo para descargarlo automáticamente:</p>
+    <a href="carpeta_nueva/redeyes.mp4" download class="file-button">Fondo de pantalla</a>
+    <a href="carpeta_nueva/presidenta.jpg" download class="file-button">Fondo de mona chichona</a>
+    <a href="https://www.mediafire.com/file/p3ws69408wxjm6o/Super+Mario+4+Jugadores(BY+Sumire_web.).7z/file" download class="file-button">Super Mario Coop</a>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p>¿Tienes alguna duda o sugerencia? Escríbeme a: <strong>mis redes</strong></p>
+    <a href="https://www.instagram.com/06__dichi_j/" class="file-button">Instagram</a>
+  </section>
+
+  <section id="sobremi">
+    <h2>Sobre mí</h2>
+    <p>Somos un grupo de chamos que no tenemos nada que hacer y un Rafa que necesita debutar.</p>
+  </section>
+
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf8c7P0sEkf7pi5v9owNKKeEUL3cL2EehJHA&s" alt="Decoración">
+
+  <!-- CHATBOT -->
   <button class="chat-toggle" onclick="toggleChat()">💬</button>
 
   <div class="chat-container" id="chatContainer">
@@ -310,27 +298,14 @@
       appendMessage(message, 'user');
       userInput.value = "";
 
-      // Simulación respuesta bot (cambia con tu backend)
-      // Aquí ejemplo que solo repite lo que envías, en morado
+      // Simulación de respuesta del bot
       setTimeout(() => {
         appendMessage("Echo: " + message, 'bot');
       }, 800);
-
-      // Si tienes backend, descomenta y usa fetch, ejemplo:
-      /*
-      const response = await fetch('backend.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ prompt: message })
-      });
-      const data = await response.json();
-      appendMessage(data.reply, 'bot');
-      */
     }
 
-    // Enviar con Enter
     userInput.addEventListener('keydown', e => {
-      if(e.key === 'Enter') {
+      if (e.key === 'Enter') {
         sendMessage();
       }
     });
