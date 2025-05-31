@@ -115,133 +115,142 @@
 
   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf8c7P0sEkf7pi5v9owNKKeEUL3cL2EehJHA&s">
 
-  <!-- Otras partes de tu web -->
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Chatbot con Avatar</title>
+  <style>
+    body {
+      background: #111;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    .chat-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #6f42c1;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 28px;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    }
+    .chat-container {
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      background: #1c1c1c;
+      width: 350px;
+      border-radius: 15px;
+      padding: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+      display: none;
+      flex-direction: column;
+      z-index: 1000;
+    }
+    .avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin: 0 auto;
+      border: 2px solid #6f42c1;
+      background-image: url('https://i.imgur.com/q6DCdYT.png');
+      background-size: cover;
+      background-position: center;
+    }
+    .chat-box {
+      background: #2a2a2a;
+      height: 200px;
+      overflow-y: auto;
+      margin: 15px 0;
+      padding: 10px;
+      border-radius: 10px;
+      font-size: 14px;
+    }
+    .message {
+      margin: 8px 0;
+    }
+    .user {
+      text-align: right;
+      color: #0f0;
+    }
+    .bot {
+      text-align: left;
+      color: #6f42c1;
+    }
+    .input-area {
+      display: flex;
+      gap: 10px;
+    }
+    input {
+      flex: 1;
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      background: #333;
+      color: #fff;
+    }
+    button.send-btn {
+      background: #6f42c1;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <button class="chat-toggle" onclick="toggleChat()">💬</button>
 
-<!-- ⬇ Aquí pega el código del chatbot -->
-<!-- Chatbot START -->
-<button class="chat-toggle" onclick="toggleChat()">💬</button>
-
-<div class="chat-container" id="chatContainer">
-  <div class="avatar"></div>
-  <div class="chat-box" id="chatBox"></div>
-  <div class="input-area">
-    <input type="text" id="userInput" placeholder="Escribe algo...">
-    <button class="send-btn" onclick="sendMessage()">Enviar</button>
+  <div class="chat-container" id="chatContainer">
+    <div class="avatar"></div>
+    <div class="chat-box" id="chatBox"></div>
+    <div class="input-area">
+      <input type="text" id="userInput" placeholder="Escribe algo...">
+      <button class="send-btn" onclick="sendMessage()">Enviar</button>
+    </div>
   </div>
-</div>
 
-<style>
-  .chat-toggle {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #6f42c1;
-    color: #fff;
-    border: none;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    font-size: 28px;
-    cursor: pointer;
-    box-shadow: 0 0 10px rgba(0,0,0,0.4);
-    z-index: 9999;
-  }
-  .chat-container {
-    position: fixed;
-    bottom: 90px;
-    right: 20px;
-    background: #1c1c1c;
-    width: 350px;
-    border-radius: 15px;
-    padding: 15px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.5);
-    display: none;
-    flex-direction: column;
-    z-index: 1000;
-  }
-  .avatar {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    margin: 0 auto;
-    border: 2px solid #6f42c1;
-    background-image: url('https://i.imgur.com/q6DCdYT.png');
-    background-size: cover;
-    background-position: center;
-  }
-  .chat-box {
-    background: #2a2a2a;
-    height: 200px;
-    overflow-y: auto;
-    margin: 15px 0;
-    padding: 10px;
-    border-radius: 10px;
-    font-size: 14px;
-    color: white;
-  }
-  .message {
-    margin: 8px 0;
-  }
-  .user {
-    text-align: right;
-    color: #0f0;
-  }
-  .bot {
-    text-align: left;
-    color: #6f42c1;
-  }
-  .input-area {
-    display: flex;
-    gap: 10px;
-  }
-  input {
-    flex: 1;
-    padding: 10px;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-    background: #333;
-    color: #fff;
-  }
-  button.send-btn {
-    background: #6f42c1;
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 10px;
-    cursor: pointer;
-  }
-</style>
+  <script>
+    const chatBox = document.getElementById('chatBox');
+    const userInput = document.getElementById('userInput');
+    const chatContainer = document.getElementById('chatContainer');
 
-<script>
-  const chatBox = document.getElementById('chatBox');
-  const userInput = document.getElementById('userInput');
-  const chatContainer = document.getElementById('chatContainer');
+    function toggleChat() {
+      chatContainer.style.display = chatContainer.style.display === 'flex' ? 'none' : 'flex';
+    }
 
-  function toggleChat() {
-    chatContainer.style.display = chatContainer.style.display === 'flex' ? 'none' : 'flex';
-  }
+    async function sendMessage() {
+      const message = userInput.value.trim();
+      if (!message) return;
 
-  async function sendMessage() {
-    const message = userInput.value.trim();
-    if (!message) return;
+      chatBox.innerHTML += `<div class="message user">${message}</div>`;
+      userInput.value = "";
+      chatBox.scrollTop = chatBox.scrollHeight;
 
-    chatBox.innerHTML += `<div class=\"message user\">${message}</div>`;
-    userInput.value = \"\";
-    chatBox.scrollTop = chatBox.scrollHeight;
+      const response = await fetch('backend.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ prompt: message })
+      });
 
-    const response = await fetch('backend.php', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ prompt: message })
-    });
+      const data = await response.json();
+      chatBox.innerHTML += `<div class="message bot">${data.reply}</div>`;
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+  </script>
+</body>
+</html>
 
-    const data = await response.json();
-    chatBox.innerHTML += `<div class=\"message bot\">${data.reply}</div>`;
-    chatBox.scrollTop = chatBox.scrollHeight;
-  }
-</script>
-<!-- Chatbot END -->
 
 </body>
 </html>
