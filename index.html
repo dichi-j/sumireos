@@ -318,52 +318,6 @@
       <button class="send-btn" onclick="sendMessage()">Enviar</button>
     </div>
   </div>
-
-  <!-- JS SIN API KEY -->
-  <script>
-    const chatBox = document.getElementById('chatBox');
-    const userInput = document.getElementById('userInput');
-    const chatContainer = document.getElementById('chatContainer');
-
-    function toggleChat() {
-      chatContainer.style.display = chatContainer.style.display === 'flex' ? 'none' : 'flex';
-    }
-
-    function appendMessage(text, className) {
-      const msgDiv = document.createElement('div');
-      msgDiv.className = 'message ' + className;
-      msgDiv.textContent = text;
-      chatBox.appendChild(msgDiv);
-      chatBox.scrollTop = chatBox.scrollHeight;
-    }
-
-    async function sendMessage() {
-      const message = userInput.value.trim();
-      if (!message) return;
-
-      appendMessage(message, 'user');
-      userInput.value = "";
-
-      try {
-        const response = await fetch("/api/chat", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({ message })
-        });
-
-        const data = await response.json();
-        appendMessage(data.reply, 'bot');
-      } catch (error) {
-        appendMessage("Error al contactar con la IA.", 'bot');
-        console.error(error);
-      }
-    }
-
-    userInput.addEventListener('keydown', e => {
-      if (e.key === 'Enter') {
-        sendMessage();
       }
     });
   </script>
