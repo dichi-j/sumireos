@@ -304,22 +304,66 @@
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf8c7P0sEkf7pi5v9owNKKeEUL3cL2EehJHA&s" alt="Imagen centrada">
   </div>
 
-  <!-- CHATBOT -->
-  <button class="chat-toggle" onclick="toggleChat()">💬</button>
+  <<!-- ... el mismo contenido hasta donde empieza el chatbot ... -->
 
-  <div class="chat-container" id="chatContainer">
-    <div class="avatar">
-      <div class="status-indicator"></div>
-    </div>
-    <div class="bot-name">Sumire Bot</div>
-    <div class="chat-box" id="chatBox"></div>
-    <div class="input-area">
-      <input type="text" id="userInput" placeholder="Escribe algo..." autocomplete="off" />
-      <button class="send-btn" onclick="sendMessage()">Enviar</button>
-    </div>
+<!-- CHATBOT -->
+<button class="chat-toggle" onclick="toggleChat()">💬</button>
+
+<div class="chat-container" id="chatContainer">
+  <div class="avatar">
+    <div class="status-indicator"></div>
   </div>
-      }
-    });
-  </script>
+  <div class="bot-name">Sumire Bot</div>
+  <div class="chat-box" id="chatBox">
+    <div class="message bot">Hola, bienvenido al chat de Sumire Web. Estoy aquí para darte soporte técnico sobre la página.</div>
+  </div>
+  <div class="input-area">
+    <input type="text" id="userInput" placeholder="Escribe algo..." autocomplete="off" />
+    <button class="send-btn" onclick="sendMessage()">Enviar</button>
+  </div>
+</div>
+
+<!-- JS SIN IA -->
+<script>
+  const chatBox = document.getElementById('chatBox');
+  const userInput = document.getElementById('userInput');
+  const chatContainer = document.getElementById('chatContainer');
+
+  function toggleChat() {
+    const isVisible = chatContainer.style.display === 'flex';
+    chatContainer.style.display = isVisible ? 'none' : 'flex';
+    if (!isVisible) {
+      userInput.focus();
+    }
+  }
+
+  function appendMessage(text, className) {
+    const msgDiv = document.createElement('div');
+    msgDiv.className = 'message ' + className;
+    msgDiv.textContent = text;
+    chatBox.appendChild(msgDiv);
+    chatBox.scrollTop = chatBox.scrollHeight;
+  }
+
+  function sendMessage() {
+    const message = userInput.value.trim();
+    if (!message) return;
+
+    appendMessage(message, 'user');
+    userInput.value = "";
+
+    // Respuesta automática (puedes editar este texto o agregar lógica simple)
+    setTimeout(() => {
+      appendMessage("Gracias por tu mensaje. En breve responderemos tus dudas sobre la página.", 'bot');
+    }, 500);
+  }
+
+  userInput.addEventListener('keydown', e => {
+    if (e.key === 'Enter') {
+      sendMessage();
+    }
+  });
+</script>
+
 </body>
 </html>
